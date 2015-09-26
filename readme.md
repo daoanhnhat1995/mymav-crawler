@@ -1,4 +1,5 @@
-To screen shot a page, a post request with good params and cookies are
-needed
+Need gem Mechanize to perform a browser search with cookies
 
-Cookies must be saved and param Statenum should be 1 
+Ruby -v 2.2.1
+
+ 

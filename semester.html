@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html dir="ltr" lang="en">
+<!-- Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved. -->
+<!-- OTHERS/0/WIN; ToolsRel=8.53.10; User=UTAGUEST; DB=ACSPRD/ORACLE; AppServ=//10.103.3.2:11000; -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script language="JavaScript">
+var  totalTimeoutMilliseconds = 2073600000; 
+var  warningTimeoutMilliseconds = 2073600000; 
+var timeOutURL = 'https://sis-cs-prod.uta.edu/psc/ACSPRD/EMPLOYEE/PSFT_ACS/?cmd=expire';
+var timeoutWarningPageURL = 'https://sis-cs-prod.uta.edu/psc/ACSPRD/EMPLOYEE/PSFT_ACS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING';
+</script> 
+
+<link id="PSSTYLEREQ_1_css" rel="stylesheet" type="text/css" href="/cs/ACSPRD/cache/PSSTYLEREQ_1.css">
+<link id="PSSTYLEDEF_SWAN_1_css" rel="stylesheet" type="text/css" href="/cs/ACSPRD/cache/PSSTYLEDEF_SWAN_1.css">
+<title id="PSPAGETITLE">Look Up Term</title>
+<script language="JavaScript">
+var winParent = null;
+var modalID = null;
+var modalZoomName = null;
+var baseKey_win0 = "\x1b\r\n";
+var altKey_win0 = "05678\xbc\xbe\xbf\xde\xbc\xbe\xde1";
+var ctrlKey_win0 = "JK";
+var saveWarningKeys_win0 = "";
+var bAccessibility_win0 =false;
+var bDoModal_win0 = true;
+var bPromptPage_win0 = true;
+var bSearchDialog_win0 =true;
+var bTabOverTB_win0 = false;
+var bTabOverPg_win0 = false;
+var bTabOverNonPS_win0 = false;
+var strCurrUrl='https://sis-cs-prod.uta.edu/psc/ACSPRD/EMPLOYEE/PSFT_ACS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?&PAGE=SSR_CLSRCH_ENTRY';
+var bIncInNavigation='T';
+var szCrefID='yyy';
+var szCrefReged='F';
+var szCrefVisible='F';
+var szCrefLabel='zzz';
+var szCalendarType = 'G';
+var bMenuSrchPage = false;
+var bWSRP=0;var szMenuSrchText = "-999999-";
+var modalCloseUrl = '/cs/ACSPRD/cache/PT_PORTAL_IC_CLOSE_1.gif';
+var modalCloseAlt = 'Close';
+var modalResizeUrl= '/cs/ACSPRD/cache/PT_RESIZE_IMG_1.gif';
+var modalResizeAlt = 'Drag to resize';
+var modalMoveAlt = 'Drag to move';
+</script>
+<script language="JavaScript">
+try {
+document.domain = "uta.edu";
+}
+catch(err) {;}
+</script>
+<script language="JavaScript" type="text/javascript" src="/cs/ACSPRD/cache/PT_COMMON_MIN_1.js">
+</script>
+<script language="JavaScript" type="text/javascript" src="/cs/ACSPRD/cache/PT_AJAX_NET_MIN_1.js">
+</script>
+<script language="JavaScript" type="text/javascript" src="/cs/ACSPRD/cache/PT_SAVEWARNINGSCRIPT_MIN_1.js">
+</script>
+<script language="JavaScript" type="text/javascript" src="/cs/ACSPRD/cache/PT_PAGESCRIPT_win0_MIN_1.js">
+</script>
+<script language="JavaScript" type="text/javascript" src="/cs/ACSPRD/cache/PT_EDITSCRIPT_win0_MIN_1.js">
+</script>
+<script language="JavaScript" type="text/javascript" src="/cs/ACSPRD/cache/PT_POPUPSCRIPT_win0_MIN_1.js">
+</script>
+<script language="JavaScript" type="text/javascript" src="/cs/ACSPRD/cache/PT_GRIDSCRIPT_win0_MIN_1.js">
+</script>
+<script language="JavaScript">
+var nResubmit=0;
+var nLastAction=0;
+var loader=null;
+if (typeof(bCleanHtml) == 'undefined')
+	var bCleanHtml = false;
+setupTimeout2();
+var postUrl_win0='https://sis-cs-prod.uta.edu/psc/ACSPRD/EMPLOYEE/PSFT_ACS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL';
+function aAction_win0(form, name, params, bAjax, bPrompt)
+{
+setupTimeout2();
+if ((name != '#ICSave'))
+processing_win0(1,3000);
+aAction0_win0(form, name, params, bAjax, bPrompt);
+}
+function submitAction_win0(form, name)
+{
+setupTimeout2();
+if (!ptCommonObj2.isICQryDownload(form, name))
+ { processing_win0(1,3000); }
+preSubmitProcess_win0(form, name);
+var spellcheckpos = name.indexOf('$spellcheck');
+if ((spellcheckpos != -1) && (name.indexOf('#KEYA5') != -1))
+	form.ICAction.value = name.substring(0,spellcheckpos);
+else 
+	form.ICAction.value=name;
+var actionName = form.ICAction.value;
+form.ICXPos.value=ptCommonObj2.getScrollX();
+form.ICYPos.value=ptCommonObj2.getScrollY();
+if (!ptCommonObj2.isAJAXReq(form, name) && !ptCommonObj2.isPromptReq(name)){
+if (nLastAction == 1 && nResubmit > 0) return;
+form.ICResubmit.value=nResubmit;
+form.submit();
+if (!ptCommonObj2.isICQryDownload(form, name))
+	nResubmit++;
+}
+else if (ptCommonObj2.isPromptReq(name))
+	pAction_win0(form, name, arguments[2]);
+else
+	aAction_win0(form, actionName);}
+</script>
+<script language="javascript">
+var pt_calHeadstyle=" class='PTCALHEAD' "
+var pt_calWeekHeadstyle=" class='PTCALWEEKHEAD' "
+function dateitemrefs()
+{
+this.pt_dateheader = "/cs/ACSPRD/cache/PT_PORTAL_IC_CLOSE_1.gif";
+this.pt_datering = "/cs/ACSPRD/cache/PT_CURRENT_DATE_1.gif";
+this.pt_datesel = "/cs/ACSPRD/cache/PT_SELECTED_DATE_1.gif";
+this.pt_nextmonth = "/cs/ACSPRD/cache/PT_RIGHT_SCROLL_1.gif";
+this.pt_prevmonth= "/cs/ACSPRD/cache/PT_LEFT_SCROLL_1.gif";
+this.pt_daystitle_hijri = "/cs/ACSPRD/cache/PT_DATE_TITLE_S6_1.gif";
+this.pt_daystitle_thai = "/cs/ACSPRD/cache/PT_DATE_TITLE_S0_1.gif";
+this.pt_daystitle_s0 = "/cs/ACSPRD/cache/PT_DATE_TITLE_S0_1.gif";
+this.pt_daystitle_m1 = "/cs/ACSPRD/cache/PT_DATE_TITLE_M1_1.gif";
+this.pt_daystitle_t2 = "/cs/ACSPRD/cache/PT_DATE_TITLE_T2_1.gif";
+this.pt_daystitle_w3 = "/cs/ACSPRD/cache/PT_DATE_TITLE_W3_1.gif";
+this.pt_daystitle_t4 = "/cs/ACSPRD/cache/PT_DATE_TITLE_T4_1.gif";
+this.pt_daystitle_f5 = "/cs/ACSPRD/cache/PT_DATE_TITLE_F5_1.gif";
+this.pt_daystitle_s6 = "/cs/ACSPRD/cache/PT_DATE_TITLE_S6_1.gif";
+}
+ 
+function LoadCalendar()
+{
+var dateitems = new dateitemrefs();
+loadImages(dateitems);
+}
+function DatePrompt_win0(dtfield,promptfield,yrfmt,bsubmit)
+{
+setupTimeout2();
+openDate_win0(dtfield, promptfield, "MDY/"+yrfmt,bsubmit,"G",0);
+}
+</script>
+<script language="JavaScript" ptdefer="defer">
+if (typeof ptStyleSheet == "undefined") {
+ptStyleSheet = 'PSSTYLEDEF_SWAN';
+}
+function onLoadExt_win0() {
+modalZoomName = null;
+var pt_pageinfo = document.getElementById('pt_pageinfo_win0');
+if (pt_pageinfo) {
+pt_pageinfo.setAttribute('Page', '(search)');
+pt_pageinfo.setAttribute('Component', '');
+pt_pageinfo.setAttribute('Menu', '');
+}
+
+ g_bAccessibilityMode=false; 
+UpdateBreadCrumbs();
+runOnloadScript_win0(false,false,false,false,false,true,false,false,false,true,false,false,false,true,true,2,'ICFocus',false,false);
+
+doModalOnLoad_win0(true, false);
+ResetGlyph_win0();
+objToBeFocus = null;
+if (typeof oWin == 'undefined') setEventHandlers_win0('ICFirstAnchor_win0', 'ICLastAnchor_win0', false);
+ else
+ oWin.setEventHandlers_win0('ICFirstAnchor_win0', 'ICLastAnchor_win0', false);
+setFocus_win0('SEARCH_RESULT1',-1);
+processing_win0(0,3000);
+ptConsole2.enable();
+
+GenerateABN();
+GenerateFakeBC();
+bcUpdateForPTF();if (typeof(myAppsWindowOpenJS) != 'undefined' && myAppsWindowOpenJS != null && myAppsWindowOpenJS != '')
+ {
+try {eval(myAppsWindowOpenJS);} catch(e) {}
+  myAppsWindowOpenJS=null;
+}
+ResetGlyph_win0();setPageletInfoInCtxmenu_win0('true');}
+try{ptEvent.load(onLoadExt_win0);}catch(e){}
+</script>
+</head>
+<body tabindex="-1" class="PSSRCHPAGE">
+<div id="pt_pageinfo_win0" page="" component="" menu=""></div>
+<div id="pt_modalMaskCover"> </div>
+<div id="pt_modalMask"> </div>
+<div id="pt_console"></div>
+<div id="pt_typeahead0"><span id="pt_typeahead" class="spanTextDropdown"> </span></div>
+<div id="WAIT_win0" style="display:none;position:absolute;right:0;"><img id="processing" align="left" src="/cs/ACSPRD/cache/PT_PROCESSING_1.gif" alt="Processing... please wait" title="Processing... please wait"></div>
+ <div id="SAVED_win0" style="display:none;position:absolute;right:0;"><table border="0" cellpadding="0" cellspacing="0"><tr>
+<td><img src="/cs/ACSPRD/cache/PTPORTAL_POPBOX_LEFT_1.gif" width="7" height="39" border="0" alt=""></td>
+<td id="saveWait_win0" width="35" align="center" valign="middle" background="/cs/ACSPRD/cache/PTPORTAL_POPBOX_CENTER_1.gif"><img src="/cs/ACSPRD/cache/PT_LOADER_1.gif" width="24" height="24" alt=""></td>
+<td nowrap background="/cs/ACSPRD/cache/PTPORTAL_POPBOX_CENTER_1.gif"><span id="ptStatusText_win0" dir="ltr" class="PSPROCESSING"> </span></td>
+<td><img src="/cs/ACSPRD/cache/PTPORTAL_POPBOX_RIGHT_1.gif" width="6" height="39" alt=""></td>
+<td> </td>
+</tr></table></div>
+<a name="ICFirstAnchor_win0"></a>
+<form name="win0" method="post" action="https://sis-cs-prod.uta.edu/psc/ACSPRD/EMPLOYEE/PSFT_ACS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL" autocomplete="off" class="PSForm">
+<div id="win0divPSHIDDENFIELDS" style="display:none">
+<input type="hidden" name="ICType" id="ICType" value="Panel">
+<input type="hidden" name="ICElementNum" id="ICElementNum" value="0">
+<input type="hidden" name="ICStateNum" id="ICStateNum" value="2">
+<input type="hidden" name="ICAction" id="ICAction" value="None">
+<input type="hidden" name="ICXPos" id="ICXPos" value="0">
+<input type="hidden" name="ICYPos" id="ICYPos" value="0">
+<input type="hidden" name="ResponsetoDiffFrame" id="ResponsetoDiffFrame" value="-1">
+<input type="hidden" name="TargetFrameName" id="TargetFrameName" value="None">
+<input type="hidden" name="FacetPath" id="FacetPath" value="None">
+<input type="hidden" name="ICFocus" id="ICFocus" value="">
+<input type="hidden" name="ICSaveWarningFilter" id="ICSaveWarningFilter" value="0">
+<input type="hidden" name="ICChanged" id="ICChanged" value="-1">
+<input type="hidden" name="ICResubmit" id="ICResubmit" value="0">
+<input type="hidden" name="ICSID" id="ICSID" value="7S6EGJJGhAGtzEL+inh9eCNJzzpLsc+/CsKZDD/wYvs=">
+<input type="hidden" name="ICActionPrompt" id="ICActionPrompt" value="false">
+<input type="hidden" name="ICFind" id="ICFind" value="">
+<input type="hidden" name="ICAddCount" id="ICAddCount" value="">
+<input type="hidden" name="ICAPPCLSDATA" id="ICAPPCLSDATA" value="">
+</div>
+<div id="win0divPAGECONTAINER">
+<div id="win0divSEARCHABOVE"></div>
+<div id="win0divSEARCHADV">
+<table id="win0tblSrchFlds" cellpadding="0" cellspacing="2" class="PSPAGECONTAINER" summary="">
+<tr><td valign="top">
+<table cellpadding="0" cellspacing="2" class="PSPAGECONTAINER" summary="" role="presentation">
+<tr valign="top">
+<td style="white-space:nowrap">
+<label for="#ICKeySelect"><span class="PSSRCHSUBTITLE">Search by:   </span></label><select name="#ICKeySelect" id="#ICKeySelect" tabindex="12" class="PSDROPDOWNLIST" onchange="addchg_win0(this);submitAction_win0(this.form,this.name);">
+<option value="1">Description</option>
+<option value="2">Short Description</option>
+<option value="0" selected>Term</option>
+</select>
+</td>
+<td style="white-space:nowrap">
+<span class="PSDROPDOWNLIST">begins with</span>
+<input type="hidden" name="SSR_CSTRMSTD_VW_STRM$op" id="SSR_CSTRMSTD_VW_STRM$op" value="1">
+</td>
+<td style="white-space:nowrap">
+<div id="win0divSSR_CSTRMSTD_VW_STRM">
+<input type="text" name="SSR_CSTRMSTD_VW_STRM" id="SSR_CSTRMSTD_VW_STRM" tabindex="14" value="" class="PSEDITBOX" style="width:140px; " maxlength="4">
+</div>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</div>
+<div id="win0divSEARCHBELOW">
+<br><a class="PSPUSHBUTTON" id="Left"><span style="background-Color: transparent;border:0;"><input type="button" id="#ICSearch" name="#ICSearch" class="PSPUSHBUTTONTBLOOKUP" value="Look Up" onclick="javascript:submitAction_win0(document.win0, '#ICSearch');" tabindex="24" psaccesskey="\" alt="Look up (Alt+1)" title="Look up (Alt+1)"> </span></a><a class="PSPUSHBUTTON" id="Left"><span style="background-Color: transparent;border:0;"><input type="button" id="#ICCancel" name="#ICCancel" class="PSPUSHBUTTONTBCANCEL" value="Cancel" onclick="javascript:doUpdateParent(document.win0,'#ICCancel');" tabindex="25" alt="Cancel (Esc)" title="Cancel (Esc)"> </span></a><a name="#ICAdvSearch" class="PSHYPERLINK" href="javascript:%20submitAction_win0(document.win0,'#ICAdvSearch');" tabindex="26">Advanced Lookup</a>
+</div>
+<div id="win0divSEARCHRESULT">
+<h2 class="PSSRCHSUBTITLE">Search Results</h2>
+<table cellpadding="0" cellspacing="0" summary="">
+<tr><td>
+<table width="100%" class="PSSRCHRESULTSTITLE" dir="ltr" cellpadding="0" cellspacing="0" summary="">
+<tr valign="baseline">
+<td align="left" colspan="2" nowrap>
+<span class="PSSRCHRESULTSHYPERLINKD">View 100</span>
+</td>
+<td align="right" nowrap>
+<span class="PSSRCHRESULTSHYPERLINKD">First</span>
+ <img src="/cs/ACSPRD/cache/PT_PREVIOUSROW_D_1.gif" name="PrevPage" alt="Show previous rows (inactive button) (Alt+,)" title="Show previous rows (inactive button) (Alt+,)" align="middle">
+ <span style="font-size:80%;">1-4 of 4</span>
+ <img src="/cs/ACSPRD/cache/PT_NEXTROW_D_1.gif" name="NextPage" alt="Show next rows (inactive button) (Alt+.)" title="Show next rows (inactive button) (Alt+.)" align="middle">
+ <span class="PSSRCHRESULTSHYPERLINKD">Last</span>
+</td>
+</tr>
+</table>
+</td></tr>
+<tr><td id="PTSRCHRESULTS0">
+<table id="PTSRCHRESULTS" class="PSSRCHRESULTSWBO" width="100%" cellspacing="0" cellpading="1" summary="Search Results Row 1-4 of 4">
+<tr align="left">
+<th scope="col" abbr="Term" class="PSSRCHRESULTSHDR"><a tabindex="27" class="PSSRCHRESULTSHDR" name="#ICSortCol1" id="#ICSortCol1" href="javascript:submitAction_win0(document.win0,'#ICSortCol1');" title="Click column heading to sort ascending">Term</a></th>
+<th scope="col" abbr="Description" class="PSSRCHRESULTSHDR"><a tabindex="28" class="PSSRCHRESULTSHDR" name="#ICSortCol2" id="#ICSortCol2" href="javascript:submitAction_win0(document.win0,'#ICSortCol2');" title="Click column heading to sort ascending">Description</a></th>
+<th scope="col" abbr="Short Description" class="PSSRCHRESULTSHDR"><a tabindex="29" class="PSSRCHRESULTSHDR" name="#ICSortCol3" id="#ICSortCol3" href="javascript:submitAction_win0(document.win0,'#ICSortCol3');" title="Click column heading to sort ascending">Short Description</a></th>
+</tr>
+<tr align="left">
+<td scope="row" class="PSSRCHRESULTSODDROW" nowrap>
+<a id="SEARCH_RESULT1" name="RESULT0%240" class="PSSRCHRESULTSODDROW" href="javascript:doUpdateParent(document.win0,'#ICRow0');">2158</a>
+</td>
+<td class="PSSRCHRESULTSODDROW" nowrap>
+<span id="RESULT2$0" name="RESULT2$0">2015 Fall</span>
+</td>
+<td class="PSSRCHRESULTSODDROW" nowrap>
+<span id="RESULT3$0" name="RESULT3$0">2015 Fall</span>
+</td>
+</tr>
+<tr align="left">
+<td scope="row" class="PSSRCHRESULTSEVENROW" nowrap>
+<a name="RESULT0%241" id="RESULT0$1" class="PSSRCHRESULTSEVENROW" href="javascript:doUpdateParent(document.win0,'#ICRow1');">2155</a>
+</td>
+<td class="PSSRCHRESULTSEVENROW" nowrap>
+<span id="RESULT2$1" name="RESULT2$1">2015 Summer</span>
+</td>
+<td class="PSSRCHRESULTSEVENROW" nowrap>
+<span id="RESULT3$1" name="RESULT3$1">2015 Sum</span>
+</td>
+</tr>
+<tr align="left">
+<td scope="row" class="PSSRCHRESULTSODDROW" nowrap>
+<a name="RESULT0%242" id="RESULT0$2" class="PSSRCHRESULTSODDROW" href="javascript:doUpdateParent(document.win0,'#ICRow2');">2152</a>
+</td>
+<td class="PSSRCHRESULTSODDROW" nowrap>
+<span id="RESULT2$2" name="RESULT2$2">2015 Spring</span>
+</td>
+<td class="PSSRCHRESULTSODDROW" nowrap>
+<span id="RESULT3$2" name="RESULT3$2">2015 Spr</span>
+</td>
+</tr>
+<tr align="left">
+<td scope="row" class="PSSRCHRESULTSEVENROW" nowrap>
+<a name="SEARCH_RESULTLAST" id="SEARCH_RESULTLAST" class="PSSRCHRESULTSEVENROW" href="javascript:doUpdateParent(document.win0,'#ICRow3');">2145</a>
+</td>
+<td class="PSSRCHRESULTSEVENROW" nowrap>
+<span id="RESULT2$3" name="RESULT2$3">2014 Summer</span>
+</td>
+<td class="PSSRCHRESULTSEVENROW" nowrap>
+<span id="RESULT3$3" name="RESULT3$3">2014 Sum</span>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</div>
+</div>
+<div id="DetachDiv" height="0" width="0" frameborder="0"></div>
+</form>
+<a name="ICLastAnchor_win0"></a>
+<div id="popupDragFrame" class="popupDragFrame"> </div>
+<!-- Mouse-over popup Begin -->
+<table id="win0MOpopupContainer" width="20" border="0" cellpadding="0" cellspacing="0" style="display:none; position:absolute; top:0; left:0;" onmouseover="MOpopupObj_win0.StartPopup('win0MOpopupContainer', '');" onmouseout="MOpopupObj_win0.StopPopup();">
+<tr>
+<td id="win0MOpopupInner" height="25" width="20" align="left" valign="top" class="MOBGImage">
+<div id="win0MOdivpopupFrame" tabindex="-1" onclick="MOpopupObj_win0.SetFocusFlag(false);" style="overflow:auto; width:20px; height: 60px; padding:8px; box-shadow:0 0 5px #000000; background-color:white; border: 1px solid #666666;">test</div>
+</td>
+</tr>
+</table>
+<!-- Mouse-over popup End  -->
+
+<!-- Embedded Help popup Begin -->
+<div id="HelppopupDiv" style="display:none; position:absolute; top:0; left:0">t</div>
+<div id="HelpDragFrame" class="popupDragFrame"> </div>
+<table id="HelppopupContainer" width="20" border="0" cellpadding="0" cellspacing="0" style="opacity:1; display:none; position:absolute; top:0; left:0">
+<tr>
+<td id="HelppopupInner" align="left" valign="top" style="position:absolute;z-Index:302;">
+<div id="HelppopupTitleBar" style="width:341px">
+<div id="HelppopupTitleBarLeftImage"></div>
+<div id="HelppopupTitleBarMiddle" style="width:333px" dir="ltr">
+<table>
+<td id="HelppopupTitle" style="width:290px; cursor: move;"><span class="PTPOPUP_TITLE">Help</span></td>
+<td style="width:45px"><img id="#HELPPOPUPCLOSE" style="cursor:pointer" title="Close" alt="Close" align="right" onclick="HelppopupObj_win0.StopPopup();" src="/cs/ACSPRD/cache/PT_PORTAL_IC_CLOSE_1.gif"></td>
+</table>
+</div>
+<div id="HelppopupTitleBarRightImage"></div>
+</div>
+<div id="HelpdivpopupFrame" class="MOBGImage" tabindex="-1" onclick="HelppopupObj_win0.SetFocusFlag(false);" style="border: 1px #bcbaba solid; padding:12px; overflow:auto;">test</div>
+<div id="HelppopupShadow" class="popupShadow" style="position:absolute;z-index:-1;">
+<div id="HelppopupShadowTopRightCorner" class="popupShadowTopRightCorner" style="height:10px;"> </div>
+<div id="HelppopupShadowTop" class="popupShadowTop"> </div>
+<div id="HelppopupShadowBottom" class="popupShadowBottom" style="height:10px">
+<div id="HelppopupShadowBottomLeftCorner" class="popupShadowBottomLeftCorner" style="height:10px;width:10px"> </div>
+<div id="HelppopupShadowBottomMiddle" class="popupShadowBottomMiddle" style="height:10px;"> </div>
+<div id="HelppopupShadowBottomRightCorner" class="popupShadowBottomRightCorner" style="height:10px;width:10px"> </div>
+</div>
+</div>
+</td>
+</tr>
+</table>
+<!-- Embedded Help popup End  -->
+<div id="pt_fakeBC" style="display:none"><ul>
+<li class="pthnavhiearchysep pthbcdispiblock"> </li>
+<li class="pthnavbarcref ptabncrefbc ptfakercfbc pthbcdispiblock" id="pthnavbccref_PT_FAKE_CLASS_SEARCH_GBL">
+<a class="abnanchor" href="https://sis-cs-prod.uta.edu/psc/ACSPRD/EMPLOYEE/PSFT_ACS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?" role="menuitem" target="TargetContent">View Schedule of Classes</a><div class="pthnavcrefimg"> </div>
+</li>
+</ul></div>
+<div id="ptus_universalSrch" style="display:none;">
+<span>Default Local Node:</span><input type="text" readonly name="ptus_defaultlocalnode" id="ptus_defaultlocalnode" value="PSFT_ACS"><br><span>DbName:</span><input type="text" readonly name="ptus_dbname" id="ptus_dbname" value="ACSPRD"><br><span>Portal:</span><input type="text" readonly name="ptus_portal" id="ptus_portal" value="EMPLOYEE"><br><span>Node:</span><input type="text" readonly name="ptus_node" id="ptus_node" value="PSFT_ACS"><br><span>WorkCenter Id:</span><input type="text" readonly name="ptus_workcenterid" id="ptus_workcenterid" value=""><br><span>Url:</span><input type="text" readonly name="ptus_componenturl" id="ptus_componenturl" value="https://sis-cs-prod.uta.edu/psp/ACSPRD/EMPLOYEE/PSFT_ACS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL"><br>
+</div>
+</body>
+<script language="JavaScript">
+var bCleanHtml = false;
+var bDefer = true;
+document.deferFldArr_win0 = new Array();
+document.hiddenFldArr_win0 =new Array('ICType','ICElementNum','ICStateNum','ICAction','ICXPos','ICYPos','ResponsetoDiffFrame','TargetFrameName','FacetPath','ICFocus','ICSaveWarningFilter','ICChanged','ICResubmit','ICSID','ICActionPrompt','ICFind','ICAddCount','ICAPPCLSDATA');
+document.chgFldArr_win0 = new Array();
+var bCDATA = false;
+var bLoadCompleted = true;
+</script>
+</html>
