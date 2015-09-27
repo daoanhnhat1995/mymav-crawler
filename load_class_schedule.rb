@@ -1,52 +1,14 @@
-#This script loads course schedules from all majors
-#
-#
-require 'mechanize'
-require 'nokogiri'
-#require './load_course_subject.rb'
-agent = Mechanize.new
-#load_subject = Subjects.new(agent)
-#list_subjects = load_subject.load()
-#puts list_subjects.content
-#list_subjects.each do {|e| puts e}
-#subject = 'CSE'
-headers = {
-        'Content-Type' => 'application/x-www-form-urlencoded',
-        'accept'=>'text/html'
- }
 
-payload = {
-"ICAJAX"=>"1",
-"ICNAVTYPEDROPDOWN"=>"0",
-"ICType"=>"Panel",
-"ICElementNum"=>"0",
-"ICStateNum"=>"1",
-"ICAction"=>"CLASS_SRCH_WRK2_SSR_PB_CLASS_SRCH",
-"ICXPos"=>"0",
-"ICYPos"=>"196",
-"ResponsetoDiffFrame"=>"-1",
-"TargetFrameName"=>"None",
-"FacetPath"=>"None",
-"ICFocus"=>"",
-"ICSaveWarningFilter"=>"0",
-"ICChanged"=>"-1",
-"ICResubmit"=>"0",
-"ICSID"=>"ToRwhmX0x3dLzRwIEPSN9AK8JuZc22GUgbR1XLjt6gM=",
-"ICActionPrompt"=>"false",
-"ICFind"=>"",
-"ICAddCount"=>"",
-"ICAPPCLSDATA"=>"",
-"CLASS_SRCH_WRK2_STRM$273$"=>"2158",
-"SSR_CLSRCH_WRK_SUBJECT$0"=>"ce"
-       }
+require './main.rb'
 
-url =' https://sis-cs-prod.uta.edu/psc/ACSPRD/EMPLOYEE/PSFT_ACS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL'
-page = agent.get(url)
-page = agent.post(url,payload,headers)
+agent = Agent.new()
+
+puts agent.add_param('SSR_CLSRCH_WRK_SUBJECT$0',"ce")
+
+
+page = agent.load()
 page =  page.search('PAGE#SSR_CLSRCH_RSLT FIELD#win0divPAGECONTAINER')
 new_page = Nokogiri::HTML(page.to_html)
-new_page = new_page.css('table.PSPAGECONTAINER #win0divPSPAGECONTAINER')
-
 item_count = new_page.css('td.SSSGROUPBOX').text
 
 
