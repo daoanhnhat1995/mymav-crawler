@@ -39,8 +39,8 @@ payload = {
 "CLASS_SRCH_WRK2_STRM$273$"=>"2158",
 "SSR_CLSRCH_WRK_SUBJECT$0"=>"ce"
        }
-       
-url =' https://sis-cs-prod.uta.edu/psc/ACSPRD/EMPLOYEE/PSFT_ACS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL' 
+
+url =' https://sis-cs-prod.uta.edu/psc/ACSPRD/EMPLOYEE/PSFT_ACS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL'
 page = agent.get(url)
 page = agent.post(url,payload,headers)
 page =  page.search('PAGE#SSR_CLSRCH_RSLT FIELD#win0divPAGECONTAINER')
@@ -50,15 +50,15 @@ new_page = new_page.css('table.PSPAGECONTAINER #win0divPSPAGECONTAINER')
 item_count = new_page.css('td.SSSGROUPBOX').text
 
 
-class_id =  new_page.xpath("//div[@id='win0divMTG_CLASS_NBR$137']").text
-section =  new_page.xpath("//div[@id='win0divMTG_CLASSNAME$137']").text
-instructor =  new_page.xpath("//div[@id='win0divMTG_INSTR$137']").text
-date =  new_page.xpath("//div[@id='win0divMTG_TOPIC$137']").text
-
-puts class_id
-puts section
-puts instructor
-puts date
+class_id =  new_page.xpath("//div[starts-with(@id,'win0divMTG_CLASS_NBR$')]").text.split("\n")
+section =  new_page.xpath("//div[starts-with(@id,'win0divMTG_CLASSNAME$')]").text.split("\n")
+instructor =  new_page.xpath("//div[starts-with(@id, 'win0divMTG_INSTR$')]").text.split("\n")
+date =  new_page.xpath("//div[starts-with(@id,'win0divMTG_TOPIC$')]").text.split("\n")
+location = new_page.xpath("//div[starts-with(@id,'win0divMTG_ROOM$')]").text.split("\n")
+puts class_id[0]
+puts section[0]
+puts instructor[0]
+puts date[0]
 
 
 
