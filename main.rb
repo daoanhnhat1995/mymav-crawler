@@ -1,5 +1,4 @@
 require 'Mechanize'
-
 class Agent
     def initialize
       @agent = Mechanize.new()
@@ -19,7 +18,8 @@ class Agent
                  "ICChanged"=>"-1",
                  "ICResubmit"=>"0",
                  "ICSID"=>"ToRwhmX0x3dLzRwIEPSN9AK8JuZc22GUgbR1XLjt6gM=",
-                 "ICActionPrompt"=>"false",
+                 "ICActionPrompt"=>"true",
+                  'ICSPROMPT'=>'1',
                  "ICFind"=>"",
                  "ICAddCount"=>"",
                  "ICAPPCLSDATA"=>"",
@@ -27,14 +27,22 @@ class Agent
 
       @url = 'https://sis-cs-prod.uta.edu/psc/ACSPRD/EMPLOYEE/PSFT_ACS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL'
       @headers = {
-        'Content-Type' => 'application/x-www-form-urlencoded',
-        'accept'=>'text/html' }
+        'Content-Type' => 'application/x-www-form-urlencoded' }
 
     end
 
     def add_param(key,value)
       @params[key] = value
       @params
+    end
+
+    def set_url(url)
+      @url = url
+    end
+
+    def get
+      @page = @agent.get(@url)
+      @page
     end
     def load
       @agent.get(@url)
