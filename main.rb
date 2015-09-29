@@ -2,6 +2,13 @@ require 'Mechanize'
 class Agent
     def initialize
       @agent = Mechanize.new()
+      begin
+        Timeout::timeout(10) do
+          @agent = Mechanize.new()
+        end
+      rescue Timeout::Error
+        puts "timeout the page doesnt exist"
+      end
       @params = { 'ICAJAX'=>'1',
                  "ICNAVTYPEDROPDOWN"=>"0",
                  "ICType"=>"Panel",
@@ -28,7 +35,7 @@ class Agent
       @url = 'https://sis-cs-prod.uta.edu/psc/ACSPRD/EMPLOYEE/PSFT_ACS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL'
       @headers = {
         'Content-Type' => 'application/x-www-form-urlencoded' }
-
+      @agent.get(@url)
     end
 
     def add_param(key,value)
@@ -42,11 +49,15 @@ class Agent
 
     def get
       @page = @agent.get(@url)
+      @agent = Mechanize.new()           
       @page
     end
-    def load
-      @agent.get(@url)
+    def load_class(dept)
+      @params['SSR_CLSRCH_WRK_SUBJECT$0'] = dept
+     
       @page = @agent.post(@url,@params,@headers)
+     rescue Errno::ETIMEDOUT, Timeout::Error => exception
+           
       @page
     end
 
