@@ -4,8 +4,8 @@ class Agent
     def initialize
       @agent = Mechanize.new()
       @agent.keep_alive = true
-      @agent.log = Logger.new $stderr
-      @agent.agent.http.debug_output = $stderr
+      # @agent.log = Logger.new $stderr
+      # @agent.agent.http.debug_output = $stderr
 
       @params = { 'ICAJAX'=>'1',
                  "ICNAVTYPEDROPDOWN"=>"0",
@@ -45,6 +45,10 @@ class Agent
       @params[key] = value
       @params
     end
+    def load
+      @page = @agent.post(@url,@params,@headers)
+      @page 
+    end
 
     def set_url(url)
       @url = url
@@ -52,7 +56,6 @@ class Agent
 
     def get
       @page = @agent.get(@url)
-      @agent = Mechanize.new()           
     end
     def load_class(dept)
       @params['SSR_CLSRCH_WRK_SUBJECT$0'] = dept
@@ -62,6 +65,7 @@ class Agent
            
       @page
     end
+    
 
 
 

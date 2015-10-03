@@ -2,14 +2,14 @@ require './load_department.rb'
 require 'Mechanize'
 require './load_class.rb'
 require 'json'
-
+require 'pg'
 #get list of department
 @list_departments = Department.new().load()
 @list = []
-#def crawl(agent,list_departments)
+def crawl(agent,list_departments)
 agent = Agent.new()
 @list_departments.each do |x|
-    row = {}
+    row = {}	
     puts x
     page = agent.load_class(x)
     list_class= Class.new()
@@ -18,10 +18,10 @@ agent = Agent.new()
     @list.push(row)
     File.write('schedule2.txt',@list.to_json)
 end
-#end
+end
 
-#agent = Agent.new()
-#crawl(agent,@list_departments[0..50])
-#agent2 = Agent.new()
-#crawl(agent2,@list_departments[51..-1])
+# agent = Agent.new()
+# crawl(agent,@list_departments[0..50])
+# agent2 = Agent.new()
+# crawl(agent2,@list_departments[51..-1])
 
