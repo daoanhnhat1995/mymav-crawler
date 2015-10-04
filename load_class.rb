@@ -5,7 +5,7 @@ class Class
   end
 
   def load(page)
-    #this unstage the xml part
+       #this unstage the xml part
     page =  page.search('PAGE#SSR_CLSRCH_RSLT FIELD#win0divPAGECONTAINER')
     new_page = Nokogiri::HTML(page.to_html)
     list = []
@@ -29,7 +29,7 @@ class Class
     #This gets  the class id e.g  81581
     class_id = t.xpath(".//div[starts-with(@id,'win0divMTG_CLASS_NBR$')]").text.strip
     section["ClassID"]=class_id
-
+    
     section["Instructor"] = t.xpath(".//div[starts-with(@id,'win0divMTG_INSTR$')]").text.strip
 
     #This gets section e.g 001-LEC  section_id-section_type
