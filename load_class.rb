@@ -17,8 +17,10 @@ class Class
    result = {}
     #This gets course title and name [ACCT 2301, PRINCIPLES OF ACCOUNTING I] 
     course_title = f.xpath(".//div[starts-with(@id,'win0divSSR_CLSRSLT_WRK_GROUPBOX2GP$')]").text.strip.split("-")
-    result["CourseID"] = course_title[0]
-    result["Title"] = course_title[1]
+    
+    #reformat char set
+    result["CourseID"] = course_title[0].gsub!(/(\u00A0)+/, ' ')
+    result["Title"] = course_title[1].gsub!(/(\u00A0)+/, ' ')
     result["Sections"] = []
 
   #this loop iterates through each class section from a course 
@@ -41,7 +43,7 @@ class Class
        section["MeetingTime"] = t.xpath(".//div[starts-with(@id,'win0divMTG_TOPIC$')]").text.strip
      
        time = t.xpath(".//div[starts-with(@id,'win0divMTG_DAYTIME$')]").text.split(" ")
-       section["Day"] = time[0]
+       section["Day"] = time[0].scan(/.{2}/)
        section["StartTime"] = time[1]
         section["EndTime"] = time[3]
 

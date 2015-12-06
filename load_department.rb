@@ -20,7 +20,7 @@ class Department
         if !str.include? "-"
           @list << str
           #add rows to postgres departments table
-          @conn.exec("INSERT INTO Departments (\"semester_id\",\"name\") VALUES (14,'#{str}')")
+          @conn.exec("INSERT INTO Departments (\"semester_id\",\"name\") VALUES (1,'#{str}')")
 
         end
       end

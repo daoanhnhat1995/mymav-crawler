@@ -1,19 +1,31 @@
 require 'pg'
 
-@conn = PG.connect(:dbname => 'nhatdao',
+@conn1 = PG.connect(
+                  :host => 'ec2-54-204-30-115.compute-1.amazonaws.com',
+                  :dbname => 'drlb8scjl9op8',
+                  :user => 'nwvvcvecinworx',
+                  :port => '5432',
+                  :password => 'HjVb86UO4sPwPHNePIu3Sho1Ns')
+
+@conn2 = PG.connect(
+                  :host => 'localhost',
+                  :dbname => 'nhatdao',
                   :user => 'nhatdao',
-                  :password => '')
+                  :port => '5432'
+)
 
 
 
+#@conn.exec("INSERT INTO Semesters (\"name\",\"code\") VALUES('Fall 2013', 93)")
 
 
-
-#@conn.exec("INSERT INTO Semesters (\"Name\",\"Code\") VALUES('Fall 2013', 93)")
-
-#@conn.exec("INSERT INTO Classes (\"department_id\",\"course_id\",\"course_title\") VALUES (1,'CSE 3330','Databases')")
+# @conn.exec("INSERT INTO Classes (\"department_id\",\"course_id\",\"course_title\") VALUES (2,'CSE 3330','Databases')")
 #@conn.exec("INSERT INTO Departments (\"semester_id\",\"name\") VALUES (2,'CSE')")
-@conn.exec("INSERT INTO Schedules (\"class_id\",\"course_id\",\"start_time\",\"end_time\",\"location\",\"instructor\",\"section_id\",\"section_type\",\"meeting_time\") VALUES (1,8010,'2:00:00','7:00:00','ERB 103','Eric W. Becker','002','LEC','M-W-F')")
+@conn.exec("INSERT INTO Schedules (\"class_id\",\"course_id\",\"start_time\",\"end_time\",\"location\",\"instructor\",\"section_id\",\"section_type\") VALUES (1,8010,'2:00:00','7:00:00','ERB 103','Eric W. Becker','002','LEC')")
 
-res = @conn.exec('SELECT * FROM Semesters')
-puts res.getvalue(4,1)
+#res = @conn.exec('SELECT * FROM Semesters')
+#puts res.getvalue(4,1)
+
+#@conn.exec("CREATE TABLE Semesters (id INTEGER PRIMARY KEY, name TEXT UNIQUE, code INTEGER UNIQUE NOT NULL)")
+
+#@conn.exec("CREATE TABLE Departments (id INTEGER PRIMARY KEY, semester_id INTEGER, name TEXT NOT NULL)")

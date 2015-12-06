@@ -27,8 +27,7 @@ class Agent
                   'ICSPROMPT'=>'1',
                  "ICFind"=>"",
                  "ICAddCount"=>"",
-                 "ICAPPCLSDATA"=>"",
-                 "CLASS_SRCH_WRK2_STRM$273$"=>"2158"}
+                 "ICAPPCLSDATA"=>""}
       @url = 'https://sis-cs-prod.uta.edu/psc/ACSPRD/EMPLOYEE/PSFT_ACS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL'
       @headers = {
         'Content-Type' => 'application/x-www-form-urlencoded'
@@ -59,7 +58,7 @@ class Agent
     end
     def load_class(dept)
       @params['SSR_CLSRCH_WRK_SUBJECT$0'] = dept
-     
+      @params['CLASS_SRCH_WRK2_STRM$273$']= '2162'
       @page = @agent.post(@url,@params,@headers)
      rescue Errno::ETIMEDOUT, Timeout::Error => exception
            

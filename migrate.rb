@@ -8,15 +8,29 @@ require 'pg'
 
 class Db_conn
   def initialize(data)
-    @conn = PG.connect(:dbname => 'nhatdao',:user=>'nhatdao',:password=>'')
+    @conn = PG.connect(
+                  :host => 'ec2-54-204-30-115.compute-1.amazonaws.com',
+                  :dbname => 'drlb8scjl9op8',
+                  :user => 'nwvvcvecinworx',
+                  :port => '5432',
+                  :password => 'HjVb86UO4sPwPHNePIu3Sho1Ns')
+
+
+    #@conn = PG.connect(:dbname => 'nhatdao',:user=>'nhatdao',:password=>'')
     @data = data
+  end
+
+  def conn
+    @conn
   end
 
   def migrate
     #This adds to department table
     #By looping each department, add_index_to_classes 
+    
+    @schedule_fk = 0
+    
     (0..@data.length-1).each do |d_index|
-
       #This line gets department name E.g CSE 
       department = @data[d_index]["Department"]
 
@@ -31,15 +45,15 @@ class Db_conn
       (0..classes.length-1).each do |c_index|
         #a single row
         aclass = classes[c_index]
-
+       
         #extract each column's value
-        course_id = aclass["CourseID"]
-        course_title = aclass["Title"]
-        course_title = course_title.delete '\''
+        course_id = aclass["CourseID"].strip
+        course_title = "#{aclass["Title"]}".delete "'".strip
 
         #insert into classes table with foreign key to department
         @conn.exec("INSERT INTO Classes (\"department_id\",\"course_id\",\"course_title\") VALUES (#{d_index+1},'#{course_id}','#{course_title}')") 
       
+        @schedule_fk = 1 + @schedule_fk #foreign key to classes table
         #list of sections in a course
         sections = aclass["Sections"]
         puts sections
@@ -48,25 +62,30 @@ class Db_conn
 
             #extract value from each column
             class_id = s["ClassID"]
-            course_id = c_index +1 #foreign key to classes table
+
             start_time = s["StartTime"]
+            puts start_time
             end_time = s["EndTime"]
           
             
             location = s["Room"]
             instructor = s["Instructor"]
-            instructor = instructor.delete '\''
-
+            instructor = instructor.delete "'"
+            
             section_type = s["SectionType"]
             section_id = s["SectionID"]
             meeting_time = s["MeetingTime"]
-            day = s["Day"]
+            day = s["Day"].to_s
+            day = day.sub('[','{')
+            day = day.sub(']','}')
+            begin 
 
-            if start_time
-              @conn.exec("INSERT INTO Schedules (\"class_id\",\"course_id\",\"start_time\",\"end_time\",\"location\",\"instructor\",\"section_id\",\"section_type\",\"meeting_time\",\"day\") VALUES ('#{class_id}',#{course_id},'#{start_time}','#{end_time}','#{location}','#{instructor}','#{section_id}','#{section_type}','#{meeting_time}','#{day}')")
-            else
-              @conn.exec("INSERT INTO Schedules (\"class_id\",\"course_id\",\"start_time\",\"end_time\",\"location\",\"instructor\",\"section_id\",\"section_type\",\"meeting_time\",\"day\") VALUES ('#{class_id}',#{course_id},NULL,NULL,'#{location}','#{instructor}','#{section_id}','#{section_type}','#{meeting_time}','#{day}')")
+              @conn.exec("INSERT INTO Schedules (\"class_id\",\"course_id\",\"start_time\",\"end_time\",\"location\",\"instructor\",\"section_id\",\"section_type\",\"meeting_time\",\"dates\") VALUES ('#{class_id}',#{@schedule_fk},'#{start_time}','#{end_time}','#{location}','#{instructor}','#{section_id}','#{section_type}','#{meeting_time}','#{day}')")
 
+            rescue PG::InvalidDatetimeFormat
+              
+              @conn.exec("INSERT INTO Schedules (\"class_id\",\"course_id\",\"start_time\",\"end_time\",\"location\",\"instructor\",\"section_id\",\"section_type\",\"meeting_time\",\"dates\") VALUES ('#{class_id}',#{@schedule_fk},NULL,NULL,'#{location}','#{instructor}','#{section_id}','#{section_type}','#{meeting_time}','#{day}')")
+            
             end
         end
      
