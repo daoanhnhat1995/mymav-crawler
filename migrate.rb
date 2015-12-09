@@ -8,15 +8,9 @@ require 'pg'
 
 class Db_conn
   def initialize(data)
-    @conn = PG.connect(
-                  :host => 'ec2-54-204-30-115.compute-1.amazonaws.com',
-                  :dbname => 'drlb8scjl9op8',
-                  :user => 'nwvvcvecinworx',
-                  :port => '5432',
-                  :password => 'HjVb86UO4sPwPHNePIu3Sho1Ns')
 
 
-    #@conn = PG.connect(:dbname => 'nhatdao',:user=>'nhatdao',:password=>'')
+    @conn = PG.connect(:dbname => 'nhatdao',:user=>'nhatdao',:password=>'')
     @data = data
   end
 

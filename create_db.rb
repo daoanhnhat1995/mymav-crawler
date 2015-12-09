@@ -4,11 +4,11 @@ require 'pg'
 
 #parse page to html document
 conn = PG.connect(
-                  :host => 'ec2-54-204-30-115.compute-1.amazonaws.com',
-                  :dbname => 'drlb8scjl9op8',
-                  :user => 'nwvvcvecinworx',
+                  :host => 'localhost',
+                  :dbname => 'nhatdao',
+                  :user => 'nhatdao',
                   :port => '5432',
-                  :password => 'HjVb86UO4sPwPHNePIu3Sho1Ns')
+                  :password => '')
 
 
 conn.exec("CREATE TABLE semesters (id serial primary key, name text, code int);")

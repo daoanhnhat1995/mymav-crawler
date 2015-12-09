@@ -1,13 +1,7 @@
 require 'pg'
 
-@conn1 = PG.connect(
-                  :host => 'ec2-54-204-30-115.compute-1.amazonaws.com',
-                  :dbname => 'drlb8scjl9op8',
-                  :user => 'nwvvcvecinworx',
-                  :port => '5432',
-                  :password => 'HjVb86UO4sPwPHNePIu3Sho1Ns')
 
-@conn2 = PG.connect(
+@conn = PG.connect(
                   :host => 'localhost',
                   :dbname => 'nhatdao',
                   :user => 'nhatdao',
