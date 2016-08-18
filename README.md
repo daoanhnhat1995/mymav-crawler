@@ -1,7 +1,6 @@
-# schedule-app-crawler
+# schedule-app-scraper
 
-ruby 2.2.1
-
+This scraper uses Mechanize and XPath to extract all course pages from UTA MyMav. It auto creates new agent to renew connection
 
 Instructions:
 
