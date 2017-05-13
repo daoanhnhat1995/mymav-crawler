@@ -1,9 +1,21 @@
-# schedule-app-crawler
+# MyMav schedule crawler
 
-This scraper uses Mechanize and XPath to extract all course pages from UTA MyMav. It auto creates new agent to renew connection
+This library uses Mechanize and XPath to extract all course pages from UTA MyMav. It auto creates new agent to renew connection
 
-Instructions:
+# How to use
 
-Load semester: ruby load_semester.rb
-
-Crawl all schedules and put in postgresql: ruby crawler.rb
+```ruby
+require 'MyMav'
+#create new agent
+#you should keep track if an agent is going down
+#check docs for agent's configuration
+agent = MyMav::Agent.new()
+#load semesters
+MyMav::Semester.load_all(agent) 
+#or with no agent will auto create a new agent
+MyMav::Semester.load_all()
+#load departments
+MyMav::Department.load_all()
+#load schedules with 100 first schedules
+MyMav::Schedule.load_all(limits=100)
+```
