@@ -1,3 +1,3 @@
-require_relative './../lib/mymav'
+require 'mymav_crawler'
 
 puts MyMav::Semester.load_all()
